@@ -1,0 +1,33 @@
+{
+  "name": "ubots_test",
+  "module": "src/main/index.ts",
+  "type": "module",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "build": "rm -rf dist && npx tsc --project tsconfig-build.json",
+    "dev": "bun src/main/index.ts",
+    "migration:generate": "npx typeorm-ts-node-esm migration:generate  -d ./src/main/config/data-source.ts ./src/infra/repos/postgres/migrations/migration",
+    "migration:create": "npx typeorm-ts-node-esm  migration:create",
+    "migration:run": "npx typeorm-ts-node-esm -d ./src/main/config/data-source.ts migration:run",
+    "migration:revert": "npx typeorm-ts-node-esm -d ./src/main/config/data-source.ts migration:revert"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.14",
+    "@types/express": "^4.17.19",
+    "@types/module-alias": "^2.0.2",
+    "@types/node": "^16.11.10",
+    "bun-types": "latest",
+    "module-alias": "^2.2.3",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "bull": "^4.11.4",
+    "bullmq": "^4.12.4",
+    "cors": "^2.8.5",
+    "express": "^4.18.2",
+    "pg": "^8.4.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.17"
+  }
+}

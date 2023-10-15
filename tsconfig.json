@@ -1,0 +1,46 @@
+{
+  "compilerOptions": {
+    "incremental": true,
+    "outDir": "dist",
+    "rootDirs": [
+      "src",
+      "tests"
+    ],
+    "target": "esnext",
+    "sourceMap": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "NodeNext",
+    "moduleResolution": "nodenext",
+    "esModuleInterop": true,
+    "baseUrl": "src",
+    "paths": {
+      "@/*": [
+        "*"
+      ],
+      "@/tests/*": [
+        "../tests/*"
+      ]
+    },
+    "strict": true,
+    "noImplicitOverride": true,
+    "removeComments": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": [
+      "ESNext"
+    ],
+    "moduleDetection": "force",
+    "downlevelIteration": true,
+    "allowSyntheticDefaultImports": true,
+    "allowJs": true,
+    "types": [
+      "bull",
+      "bun-types"
+    ]
+  },
+  "include": [
+    "src",
+    "tests"
+  ]
+}
