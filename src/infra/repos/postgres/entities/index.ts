@@ -1,2 +1,2 @@
-export * from './ticket.entity.js'
-export * from './ticket-type.entity.js'
+export * from './user.entity'
+export * from './ticket.entity'

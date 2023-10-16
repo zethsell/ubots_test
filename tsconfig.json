@@ -3,23 +3,18 @@
     "incremental": true,
     "outDir": "dist",
     "rootDirs": [
-      "src",
-      "tests"
+      "src"
     ],
     "target": "esnext",
     "sourceMap": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "module": "NodeNext",
-    "moduleResolution": "nodenext",
+    "module": "commonjs",
     "esModuleInterop": true,
     "baseUrl": "src",
     "paths": {
       "@/*": [
         "*"
-      ],
-      "@/tests/*": [
-        "../tests/*"
       ]
     },
     "strict": true,
@@ -35,12 +30,10 @@
     "allowSyntheticDefaultImports": true,
     "allowJs": true,
     "types": [
-      "bull",
       "bun-types"
     ]
   },
   "include": [
-    "src",
-    "tests"
+    "src"
   ]
 }

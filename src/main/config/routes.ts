@@ -4,10 +4,10 @@ import { join } from 'path'
 
 export const setupRoutes = (app: Express): void => {
   const router = Router()
-  readdirSync(join(import.meta.dir, '../routes'))
-    .filter(file => !file.endsWith('.map'))
-    .map(async file => {
-      (await import(`../routes/${file}`)).default(router)
+  readdirSync(join(__dirname, '../routes'))
+    .filter((file) => !file.endsWith('.map'))
+    .map(async (file) => {
+      ;(await import(`../routes/${file}`)).default(router)
     })
   app.use('/api', router)
 }

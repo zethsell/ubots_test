@@ -1,33 +1,49 @@
 {
   "name": "ubots_test",
   "module": "src/main/index.ts",
-  "type": "module",
   "scripts": {
     "start": "ts-node src/index.ts",
     "build": "rm -rf dist && npx tsc --project tsconfig-build.json",
-    "dev": "bun src/main/index.ts",
-    "migration:generate": "npx typeorm-ts-node-esm migration:generate  -d ./src/main/config/data-source.ts ./src/infra/repos/postgres/migrations/migration",
-    "migration:create": "npx typeorm-ts-node-esm  migration:create",
-    "migration:run": "npx typeorm-ts-node-esm -d ./src/main/config/data-source.ts migration:run",
-    "migration:revert": "npx typeorm-ts-node-esm -d ./src/main/config/data-source.ts migration:revert"
+    "dev": "bun --hot --inspect src/main/index.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write src/**/*.ts ",
+    "prepare": "husky install",
+    "queue:work": "bun run src/main/queue-worker.ts",
+    "migration:generate": "npx typeorm-ts-node-commonjs  migration:generate  -d ./src/main/config/data-source.ts ./src/infra/repos/postgres/migrations/migration",
+    "migration:create": "npx typeorm-ts-node-commonjs  migration:create",
+    "migration:reset": "npx typeorm-ts-node-commonjs  schema:drop && npx typeorm-ts-node-commonjs  schema:sync",
+    "migration:run": "npx typeorm-ts-node-commonjs -d ./src/main/config/data-source.ts migration:run",
+    "migration:revert": "npx typeorm-ts-node-commonjs -d ./src/main/config/data-source.ts migration:revert"
   },
   "devDependencies": {
     "@types/cors": "^2.8.14",
     "@types/express": "^4.17.19",
     "@types/module-alias": "^2.0.2",
     "@types/node": "^16.11.10",
+    "@types/uuid": "^9.0.5",
+    "@typescript-eslint/eslint-plugin": "^6.7.5",
+    "@typescript-eslint/parser": "^6.7.5",
     "bun-types": "latest",
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^15.0.1",
     "module-alias": "^2.2.3",
+    "prettier": "^3.0.3",
     "rimraf": "^5.0.5",
     "typescript": "^5.2.2"
   },
   "dependencies": {
-    "bull": "^4.11.4",
     "bullmq": "^4.12.4",
+    "class-validator": "^0.14.0",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "ioredis": "^5.3.2",
     "pg": "^8.4.0",
+    "redis": "^4.6.10",
     "reflect-metadata": "^0.1.13",
-    "typeorm": "^0.3.17"
+    "typeorm": "^0.3.17",
+    "uuid": "^9.0.1"
   }
 }
