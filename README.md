@@ -6,6 +6,12 @@ To install dependencies:
 bun install
 ```
 
+To Run migrations
+
+```bash
+bun run migration:run
+```
+
 To run dev:
 
 ```bash
@@ -37,4 +43,4 @@ CLOSE TICKET => POST => api/close-ticket/:id
 
 *the insomnia file is on api root*
 
-This project was created using bun v1.0.6.
+***This project was created using bun v1.0.6.***
