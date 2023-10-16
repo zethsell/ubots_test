@@ -2,8 +2,8 @@
   "name": "ubots_test",
   "module": "src/main/index.ts",
   "scripts": {
-    "start": "ts-node src/index.ts",
-    "build": "rm -rf dist && npx tsc --project tsconfig-build.json",
+    "start": "bun run dist/main/index.js",
+    "build": "rm -rf dist && npx tsc -p tsconfig-build.json",
     "dev": "bun --hot --inspect src/main/index.ts",
     "lint:fix": "eslint src/**/*.ts --fix",
     "format": "prettier --write src/**/*.ts ",
@@ -45,5 +45,10 @@
     "reflect-metadata": "^0.1.13",
     "typeorm": "^0.3.17",
     "uuid": "^9.0.1"
+  },
+  "paths": {
+    "@/*": [
+      "*"
+    ]
   }
 }

@@ -1,7 +1,7 @@
 // import { setupMiddlewares } from '@/main/config/middlewares'
 import express from 'express'
-import { setupMiddlewares } from '@/main/config/middlewares.js'
-import { setupRoutes } from '@/main/config/routes.js'
+import { setupMiddlewares } from '@/main/config/middlewares'
+import { setupRoutes } from '@/main/config/routes'
 
 const app = express()
 setupMiddlewares(app)

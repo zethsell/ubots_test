@@ -1,2 +1,2 @@
-export * from './connection.js'
-export * from './errors.js'
+export * from './connection'
+export * from './errors'

@@ -11,7 +11,7 @@
     "forceConsistentCasingInFileNames": true,
     "module": "commonjs",
     "esModuleInterop": true,
-    "baseUrl": "src",
+    "baseUrl": "./src",
     "paths": {
       "@/*": [
         "*"
@@ -22,9 +22,6 @@
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "lib": [
-      "ESNext"
-    ],
     "moduleDetection": "force",
     "downlevelIteration": true,
     "allowSyntheticDefaultImports": true,

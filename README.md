@@ -6,10 +6,35 @@ To install dependencies:
 bun install
 ```
 
-To run:
+To run dev:
 
 ```bash
-bun run index.ts
+bun run dev
 ```
 
-This project was created using `bun init` in bun v1.0.6. [Bun](https://bun.sh) is a fast all-in-one JavaScript runtime.
+To run production:
+
+```bash
+bun run build
+bun run start
+```
+
+To run queue work:
+
+```bash
+bun run queue:work
+```
+
+Routes:
+
+```
+LIST USERS => GET => api/users
+CREATE USER => POST => api/users
+----------------------------------------------------------------
+CREATE TICKET => POST => api/tickets
+CLOSE TICKET => POST => api/close-ticket/:id
+```
+
+*the insomnia file is on api root*
+
+This project was created using bun v1.0.6.

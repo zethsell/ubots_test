@@ -1,5 +1,5 @@
 import { Queue, QueueOptions } from 'bullmq'
-import { env } from './env.js'
+import { env } from './env'
 
 export type Queues = { cards: Queue } & { loans: Queue } & { others: Queue }
 
