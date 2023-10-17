@@ -6,6 +6,22 @@ To install dependencies:
 bun install
 ```
 
+Set ENV vars ( for this project I left a test db )
+```
+SERVER_PORT=5555
+
+DB_TYPE="postgres"
+DB_HOST="suleiman.db.elephantsql.com"
+DB_PORT="5432"
+DB_USER="lpvxnvph"
+DB_PASS="B2miURNvv46qdDUxzmNPePbXtW1X1kf1"
+DB_NAME="lpvxnvph"
+
+REDIS_HOST="localhost"
+REDIS_PORT="6379"
+REDIS_PASS=""
+```
+
 To Run migrations
 
 ```bash
