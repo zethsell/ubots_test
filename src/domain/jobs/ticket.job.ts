@@ -18,12 +18,6 @@ export const ticketJob: Setup =
   async ({ data: { origin, ticket, queue } }) => {
     const users = await userRepository.get()
     const filteredUsers = users.filter((user) => user.team === origin).filter((user) => user.tickets!.length < 3)
-    // const usersWithoutTickets = users.filter((user) => user.tickets?.length === 0)
-    // const usersWithTickets = users
-    //   .filter((user) => user.tickets?.filter((ticket) => !ticket.closedAt))
-    //   .filter((user) => user.tickets!.length < 3)
-    //
-    // const filteredUsers = [...usersWithoutTickets, ...usersWithTickets].filter((user) => user.team === origin)
     if (filteredUsers.length === 0) {
       await queue.pause()
       await queue.add(uuid.generate({ key: `${origin.toLowerCase()}s` }), { ticket })
